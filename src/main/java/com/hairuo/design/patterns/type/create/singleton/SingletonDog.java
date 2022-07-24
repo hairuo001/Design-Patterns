@@ -7,6 +7,10 @@ package com.hairuo.design.patterns.type.create.singleton;
  */
 public class SingletonDog {
     private static SingletonDog singletonDog = new SingletonDog();
+
+    // 构造方法私有化后，该类不能被new实例化
+    private SingletonDog() {
+    }
     public static SingletonDog create(){
        return singletonDog;
     }
