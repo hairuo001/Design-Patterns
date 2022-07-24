@@ -1,0 +1,194 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "com.hairuo.design.patterns.type.create.factory.Monster#run()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "com.hairuo.design.patterns.type.create.factory.Monster",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1224712708 { 
+   	label=hairuo
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1447193104 { 
+   	label=design
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_154956447 { 
+   	label=App
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   App1353699956XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="App
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_154957908 { 
+   	label=Cat
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Cat1353699956XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="Cat
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_154959290 { 
+   	label=Dog
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Dog1353699956XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="Dog
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_509336980 { 
+   	label=Wolf
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Wolf1353699956XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="Wolf
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_744238760 { 
+   	label=Monster
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Monster1353699956XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="Monster
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+App1353699956XXXmain1859653459 -> Monster1353699956XXXrun0;
+Monster1353699956XXXrun0 -> Cat1353699956XXXrun0;
+Monster1353699956XXXrun0 -> Dog1353699956XXXrun0;
+Monster1353699956XXXrun0 -> Wolf1353699956XXXrun0;
+    
+}
+@enduml
