@@ -1,0 +1,207 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.hairuo.design.patterns.type.create.biuilder.App",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1224712708 { 
+   	label=hairuo
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1447193104 { 
+   	label=design
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   App1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)App</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DesktopBuilder1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DesktopBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   cpu: ModuleCpu [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   gpu: ModuleGpu [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mem: ModuleMemory [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Director1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Director</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   builder: Builder [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ construct(priceCpu: Long, priceGpu: Long, priceMem: Long): Builder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LaptopBuilder1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LaptopBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   cpu: ModuleCpu [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   gpu: ModuleGpu [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mem: ModuleMemory [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ModuleCpu1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ModuleCpu</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   price: long [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ModuleGpu1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ModuleGpu</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   price: long [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ModuleMemory1618825086[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ModuleMemory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   price: long [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+DesktopBuilder1618825086 -> ModuleCpu1618825086[label="cpu
+[0..1]"];
+DesktopBuilder1618825086 -> ModuleGpu1618825086[label="gpu
+[0..1]"];
+DesktopBuilder1618825086 -> ModuleMemory1618825086[label="mem
+[0..1]"];
+Director1618825086 -> DesktopBuilder1618825086[arrowhead=none];
+Director1618825086 -> LaptopBuilder1618825086[arrowhead=none];
+LaptopBuilder1618825086 -> ModuleCpu1618825086[label="cpu
+[0..1]"];
+LaptopBuilder1618825086 -> ModuleGpu1618825086[label="gpu
+[0..1]"];
+LaptopBuilder1618825086 -> ModuleMemory1618825086[label="mem
+[0..1]"];
+    
+}
+@enduml
