@@ -1,0 +1,216 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "com.hairuo.design.patterns.type.behavior.command.App#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "com.hairuo.design.patterns.type.behavior.command.App",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1224712708 { 
+   	label=hairuo
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1447193104 { 
+   	label=design
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1117157484 { 
+   	label=RunCar
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   RunCar231986653XXXexecute0[
+	label="+ execute()"
+	style=filled
+	fillcolor=white
+	tooltip="RunCar
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1309297590 { 
+   	label=App
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   App231986653XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="App
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1309299049 { 
+   	label=Car
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Car231986653XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="Car
+
+null"
+	fontcolor=darkgreen
+];
+
+Car231986653XXXstop0[
+	label="+ stop()"
+	style=filled
+	fillcolor=white
+	tooltip="Car
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1577926108 { 
+   	label=Broker
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Broker231986653XXXaddOrder76453678[
+	label="+ addOrder()"
+	style=filled
+	fillcolor=white
+	tooltip="Broker
+
+null"
+	fontcolor=darkgreen
+];
+
+Broker231986653XXXexeOrders0[
+	label="+ exeOrders()"
+	style=filled
+	fillcolor=white
+	tooltip="Broker
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_588965767 { 
+   	label=StopCar
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   StopCar231986653XXXexecute0[
+	label="+ execute()"
+	style=filled
+	fillcolor=white
+	tooltip="StopCar
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+App231986653XXXmain1859653459 -> Broker231986653XXXaddOrder76453678;
+App231986653XXXmain1859653459 -> Broker231986653XXXexeOrders0;
+Broker231986653XXXexeOrders0 -> RunCar231986653XXXexecute0;
+Broker231986653XXXexeOrders0 -> StopCar231986653XXXexecute0;
+RunCar231986653XXXexecute0 -> Car231986653XXXrun0;
+StopCar231986653XXXexecute0 -> Car231986653XXXstop0;
+    
+}
+@enduml
